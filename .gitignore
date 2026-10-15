@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+.venv/
+# per-machine agent config (contains tokens)
+.codex/
+.claude/settings.local.json
