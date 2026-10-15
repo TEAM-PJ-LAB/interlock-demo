@@ -18,3 +18,4 @@ python -m pytest -q
 Agents follow the rules in [AGENTS.md](AGENTS.md).
 
 Interlock checks every pull request in this repository.
+Agents coordinate through the interlock MCP server.
