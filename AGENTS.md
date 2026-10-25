@@ -1,17 +1,17 @@
 # Working in this repository
 
-Several AI agents work on this codebase at the same time, each on its own branch. They coordinate
-through the **interlock** MCP server.
+<!-- interlock:begin -->
+## Interlock
 
-## Rules
-
-1. Before editing any file, call `claim_files` with every file or directory you will change
-   (for example `src/auth/` or `src/api/orders.py`) and a one-line `intent`.
-2. If the result is `granted: false`, do **not** edit those paths. Tell the user who holds them and
-   why (from `conflicts`), then continue with the parts of the task you can do, or wait.
-3. Claim only what you need. Prefer files over whole directories when the change is small.
-4. After you commit and push, call `release_files`.
-5. Use `list_claims` to see what other agents are working on.
+Several agents work on this repository at the same time. Interlock claims the files your task names
+when it starts and releases them when your session ends; call `claim_files` only for other code you
+will change. An edit that overlaps another agent's work is refused once: fit your change to its intent
+and retry (or `wait_for_files`); never end a task only because of a refusal. Before changing a
+function's signature, declare it with `declare_contract`. A signature shown with an "Interlock:" note
+is a peer's declared change: write the calls you add for it, and leave its existing calls and tests to
+that peer. When you finish, fix what Interlock reports (calls that do not fit a peer's change, tests
+failing merged with a peer's work), then finish.
+<!-- interlock:end -->
 
 ## Project
 

@@ -1,8 +1,10 @@
 # interlock-demo
 
 A small shop backend used to demonstrate [Interlock](https://github.com/TEAM-PJ-LAB/yc): several AI
-coding agents change this repository in parallel, and Interlock keeps them from editing the same
-files at the same time.
+coding agents change this repository in parallel, and Interlock (V3.15.0) keeps them from editing the same
+files at the same time, at symbol level.
+
+Set up with `interlock init` (see the [Interlock README](https://github.com/TEAM-PJ-LAB/yc#readme)).
 
 ```
 src/auth/      sessions, passwords, require_login
